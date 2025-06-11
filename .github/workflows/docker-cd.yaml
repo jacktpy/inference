@@ -19,16 +19,7 @@ jobs:
     strategy:
       matrix:
         python-version: [ "3.9" ]
-        include:
-          - os: linux
-            arch: amd64
-            target: archive
-          - os: linux
-            arch: amd64
-            target: rocm
-          - os: linux
-            arch: arm64
-            target: archive
+        arch: [amd64, arm64]
     steps:
       - name: Check out code
         uses: actions/checkout@v3

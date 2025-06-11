@@ -32,7 +32,7 @@ RUN pip install --upgrade -i "$PIP_INDEX" pip setuptools wheel&& \
     pip install -i "$PIP_INDEX" --upgrade-strategy only-if-needed -r /opt/inference/xinference/deploy/docker/requirements-ml.txt && \
     pip install -i "$PIP_INDEX" --upgrade-strategy only-if-needed -r /opt/inference/xinference/deploy/docker/requirements-models.txt && \
     pip install -i "$PIP_INDEX" transformers>=4.51.3 && \
-    pip install -i "$PIP_INDEX" --no-deps sglang && \
+    # pip install -i "$PIP_INDEX" --no-deps sglang && \
     pip uninstall flashinfer -y && \
     pip install flashinfer-python -i https://flashinfer.ai/whl/cu124/torch2.6 && \
     cd /opt/inference && \

@@ -35,7 +35,6 @@ jobs:
 
       - name: Build and push Docker image
         shell: bash
-        if: ${{ github.repository == 'xorbitsai/inference' }}
         env:
           DOCKER_ORG: ${{ secrets.DOCKERHUB_USERNAME }}
           PY_VERSION: ${{ matrix.python-version }}
@@ -76,6 +75,5 @@ jobs:
 
       - name: Clean docker image cache
         shell: bash
-        if: ${{ github.repository == 'xorbitsai/inference' }}
         run: |
           docker system prune -f -a
